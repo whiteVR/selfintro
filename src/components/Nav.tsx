@@ -24,7 +24,7 @@ export default function Nav() {
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.inner}>
         <a href="#top" className={styles.logo}>
-          <span className="grad-text">XR</span>.folio
+          <span className="grad-text">AXR</span>.folio
         </a>
         <ul className={styles.links}>
           {LINKS.map((l) => (

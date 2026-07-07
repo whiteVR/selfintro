@@ -19,7 +19,6 @@ export default function Lectures() {
           </div>
         ))}
       </div>
-      <p className={`${styles.more} reveal`}>외 다수의 대학·기관 XR/AR·VR 인재양성 과정 진행</p>
     </Section>
   );
 }

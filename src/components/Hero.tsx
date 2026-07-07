@@ -6,7 +6,7 @@ export default function Hero() {
     <header id="top" className={styles.hero}>
       <div className={styles.glow} aria-hidden="true" />
       <div className={`container ${styles.inner}`}>
-        <p className={styles.badge}>XR · METAVERSE · DIGITAL TWIN</p>
+        <p className={styles.badge}>AI · XR · METAVERSE · DIGITAL TWIN · 3D · GAME</p>
         <h1 className={styles.title}>
           실감을 설계하는
           <br />
