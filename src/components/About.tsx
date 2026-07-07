@@ -1,14 +1,14 @@
-import { profile, skills } from "../data/profile";
+import { profile } from "../data/profile";
 import Section from "./Section";
 import styles from "./About.module.css";
 
 export default function About() {
   return (
-    <Section id="about" eyebrow="ABOUT" title="소개" accent="var(--cyan)">
+    <Section id="about" eyebrow="ABOUT" title="소개">
       <div className={`${styles.grid} reveal`}>
         <div className={styles.card}>
           <div className={styles.avatar}>
-            <img src={profile.logo} alt="Ethan Aurelio 로고" />
+            <img src={profile.photo} alt={`${profile.name} 프로필`} />
           </div>
           <h3 className={styles.name}>{profile.name}</h3>
           <p className={styles.role}>{profile.role}</p>
@@ -18,7 +18,7 @@ export default function About() {
               <a href={`mailto:${profile.email}`}>{profile.email}</a>
             </li>
             <li>
-              <span>Contact</span>
+              <span>Phone</span>
               <p>{profile.phone}</p>
             </li>
             <li>
@@ -31,23 +31,15 @@ export default function About() {
         <div className={styles.body}>
           <p className={styles.lead}>{profile.intro}</p>
           <p className={styles.para}>
-            제조·물류 현장의 데이터를 가상 공간에 실시간으로 잇는 디지털 트윈과, Unity·Unreal
-            기반의 실감형 시뮬레이션을 설계·개발합니다. 동시에 이 기술을 학습자의 눈높이에 맞춘
-            커리큘럼으로 옮겨, AI 융합 인재를 길러내는 교육 연구를 병행합니다.
+            CAD·VR 개발에서 출발해 실감형 시뮬레이터, Web3D, 메타버스, 디지털트윈으로 이어지는
+            기술 흐름을 실무와 강의 양쪽에서 축적해 왔습니다. 원자력·자동차·중공업 등 고신뢰
+            도메인의 대형 프로젝트를 기술 총괄로 수행했으며, 현재는 AI·디지털트윈까지 영역을
+            확장하고 있습니다.
           </p>
-
-          <div className={styles.skills}>
-            {skills.map((g) => (
-              <div key={g.category} className={styles.skillGroup}>
-                <h4 className={styles.skillCat}>{g.category}</h4>
-                <ul className={styles.chips}>
-                  {g.items.map((it) => (
-                    <li key={it}>{it}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <p className={styles.para}>
+            홍익대 국제디자인대학원을 비롯한 디자인 기반의 시각적 감각과 엔지니어링 역량을 함께
+            갖추고, 7종의 NCS 공인강사 자격으로 차세대 XR·AI 인재 양성에 힘쓰고 있습니다.
+          </p>
         </div>
       </div>
     </Section>

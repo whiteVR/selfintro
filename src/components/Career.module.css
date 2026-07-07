@@ -1,0 +1,73 @@
+.timeline {
+  position: relative;
+  padding-left: 28px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--cyan), var(--purple), transparent);
+}
+.item {
+  position: relative;
+  padding-bottom: 34px;
+}
+.item:last-child {
+  padding-bottom: 0;
+}
+.dot {
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--cyan);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.6);
+}
+.content {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 18px 22px;
+  transition: border-color 0.2s;
+}
+.content:hover {
+  border-color: rgba(124, 58, 237, 0.4);
+}
+.top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.org {
+  font-size: 17px;
+  font-weight: 700;
+}
+.period {
+  font-size: 12px;
+  color: var(--cyan);
+  font-family: var(--font-en);
+  white-space: nowrap;
+}
+.role {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.place {
+  color: var(--ink-dim);
+  font-weight: 400;
+}
+.desc {
+  margin-top: 6px;
+  font-size: 13.5px;
+  color: var(--ink-dim);
+}
