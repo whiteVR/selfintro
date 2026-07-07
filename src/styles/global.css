@@ -1,14 +1,17 @@
 :root {
-  --bg: #0b0e14;
-  --bg-soft: #10141d;
-  --panel: rgba(255, 255, 255, 0.04);
-  --panel-border: rgba(255, 255, 255, 0.08);
-  --ink: #e8ecf4;
-  --ink-soft: #97a1b5;
-  --ink-dim: #5f6a80;
-  --cyan: #22d3ee;
-  --purple: #7c3aed;
-  --accent-grad: linear-gradient(90deg, #22d3ee, #7c3aed);
+  /* 다크 네이비 톤 */
+  --bg: #0a1020;
+  --bg-soft: #0e1830;
+  --panel: rgba(255, 255, 255, 0.045);
+  --panel-border: rgba(255, 255, 255, 0.09);
+  --ink: #eef2fb;
+  --ink-soft: #a4b1c9;
+  --ink-dim: #6b7896;
+  --cyan: #38d6ef;
+  --purple: #a78bfa;
+  --gold: #e3b23c;
+  --gold-soft: #f2cf7a;
+  --accent-grad: linear-gradient(90deg, #f2cf7a, #e3b23c);
   --maxw: 1120px;
   --font-en: "Inter", "Noto Sans KR", sans-serif;
   --font-kr: "Noto Sans KR", "Inter", sans-serif;
@@ -27,9 +30,11 @@ html {
 
 body {
   font-family: var(--font-kr);
-  background: var(--bg);
+  background: linear-gradient(180deg, #0a1020 0%, #0b132a 55%, #0a1020 100%);
+  background-attachment: fixed;
   color: var(--ink);
-  line-height: 1.7;
+  line-height: 1.75;
+  letter-spacing: -0.1px;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }

@@ -1,0 +1,95 @@
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 70px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--purple), var(--cyan), transparent);
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.marker {
+  display: flex;
+  justify-content: flex-start;
+}
+.badge {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--purple);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  background: rgba(167, 139, 250, 0.08);
+  white-space: nowrap;
+}
+
+.content {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.content::before {
+  /* 타임라인 선과 카드를 잇는 점 */
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 22px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--purple);
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.6);
+}
+.content:hover {
+  border-color: rgba(167, 139, 250, 0.45);
+  transform: translateX(4px);
+}
+.title {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.org {
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cyan);
+}
+.desc {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.9;
+}
+
+@media (max-width: 640px) {
+  .timeline::before {
+    left: 6px;
+  }
+  .item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-left: 26px;
+  }
+  .content::before {
+    left: -20px;
+  }
+}

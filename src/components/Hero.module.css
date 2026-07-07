@@ -5,60 +5,77 @@
   align-items: center;
   padding: 120px 0 80px;
   overflow: hidden;
+  background: radial-gradient(120% 100% at 50% 0%, #12203f 0%, #0a1020 62%);
+}
+
+/* 3D 구와 텍스트 사이의 가독성 오버레이: 중앙을 어둡게 눌러 폰트 대비 확보 */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+      70% 55% at 38% 48%,
+      rgba(10, 16, 32, 0.82) 0%,
+      rgba(10, 16, 32, 0.45) 45%,
+      rgba(10, 16, 32, 0) 80%
+    ),
+    linear-gradient(180deg, rgba(10, 16, 32, 0.4) 0%, rgba(10, 16, 32, 0) 30%, rgba(10, 16, 32, 0.75) 100%);
+  pointer-events: none;
 }
 .glow {
   position: absolute;
-  top: -10%;
+  top: 4%;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
-  height: 700px;
+  width: 820px;
+  height: 620px;
   background: radial-gradient(
     closest-side,
-    rgba(124, 58, 237, 0.28),
-    rgba(34, 211, 238, 0.12) 55%,
+    rgba(227, 178, 60, 0.14),
+    rgba(56, 214, 239, 0.06) 55%,
     transparent 75%
   );
   filter: blur(40px);
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
+
 .inner {
   position: relative;
-  z-index: 2;
-  max-width: 820px;
+  z-index: 3;
+  max-width: 860px;
 }
 .badge {
   font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 3px;
-  color: var(--cyan);
+  color: var(--gold);
   margin-bottom: 22px;
 }
 .title {
-  font-family: var(--font-kr);
-  font-size: clamp(34px, 6vw, 62px);
+  font-size: clamp(32px, 6.2vw, 66px);
   font-weight: 900;
-  line-height: 1.2;
+  line-height: 1.22;
   letter-spacing: -1.5px;
+  /* 3D 배경 위에서도 또렷하게 */
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55);
 }
-.roles {
-  margin-top: 20px;
-  font-size: clamp(15px, 2.2vw, 19px);
-  font-weight: 600;
-  color: var(--ink-soft);
+.lineTop {
+  color: #ffffff;
 }
-.roles em {
-  color: var(--purple);
-  font-style: normal;
-  margin: 0 10px;
+.lineBottom {
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .intro {
   margin-top: 24px;
-  max-width: 640px;
-  font-size: 15px;
-  color: var(--ink-soft);
-  line-height: 1.9;
+  max-width: 620px;
+  font-size: 15.5px;
+  color: #cdd6ea;
+  line-height: 1.95;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
 }
 
 .actions {
@@ -72,35 +89,35 @@
   display: inline-flex;
   align-items: center;
   padding: 14px 30px;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 10px;
+  font-weight: 700;
   font-size: 15px;
   transition: all 0.2s ease;
 }
 .primary {
   background: var(--accent-grad);
-  color: #05070c;
-  box-shadow: 0 10px 30px rgba(34, 211, 238, 0.25);
+  color: #2a1c00;
+  box-shadow: 0 10px 30px rgba(227, 178, 60, 0.28);
 }
 .primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 38px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 16px 38px rgba(227, 178, 60, 0.42);
 }
 .ghost {
-  border: 1px solid var(--panel-border);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: var(--ink);
-  background: var(--panel);
+  background: rgba(255, 255, 255, 0.04);
 }
 .ghost:hover {
-  border-color: var(--cyan);
-  color: var(--cyan);
+  border-color: var(--gold);
+  color: var(--gold-soft);
 }
 
 .stats {
   list-style: none;
   margin-top: 56px;
   display: flex;
-  gap: 44px;
+  gap: 40px;
   flex-wrap: wrap;
 }
 .stats li {
@@ -109,14 +126,15 @@
 }
 .stats strong {
   font-family: var(--font-display);
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 800;
   line-height: 1;
+  color: var(--gold-soft);
 }
 .stats span {
   margin-top: 8px;
-  font-size: 13px;
-  color: var(--ink-dim);
+  font-size: 12.5px;
+  color: var(--ink-soft);
 }
 
 .scrollHint {
@@ -126,9 +144,9 @@
   transform: translateX(-50%);
   width: 26px;
   height: 42px;
-  border: 2px solid var(--ink-dim);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 14px;
-  z-index: 2;
+  z-index: 3;
 }
 .scrollHint span {
   position: absolute;
@@ -138,7 +156,7 @@
   width: 4px;
   height: 8px;
   border-radius: 2px;
-  background: var(--cyan);
+  background: var(--gold);
   animation: scrolldot 1.6s infinite;
 }
 @keyframes scrolldot {
@@ -149,9 +167,9 @@
 
 @media (max-width: 560px) {
   .stats {
-    gap: 28px;
+    gap: 26px;
   }
   .stats strong {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
