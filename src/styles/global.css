@@ -1,0 +1,102 @@
+:root {
+  --bg: #0b0e14;
+  --bg-soft: #10141d;
+  --panel: rgba(255, 255, 255, 0.04);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --ink: #e8ecf4;
+  --ink-soft: #97a1b5;
+  --ink-dim: #5f6a80;
+  --cyan: #22d3ee;
+  --purple: #7c3aed;
+  --accent-grad: linear-gradient(90deg, #22d3ee, #7c3aed);
+  --maxw: 1120px;
+  --font-en: "Inter", "Noto Sans KR", sans-serif;
+  --font-kr: "Noto Sans KR", "Inter", sans-serif;
+  --font-display: "Orbitron", "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-kr);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.4);
+  color: #fff;
+}
+
+/* 공통 유틸 */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.grad-text {
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* 스크롤 진입 애니메이션 */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #232a38;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2f3646;
+}

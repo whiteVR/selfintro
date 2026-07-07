@@ -1,0 +1,26 @@
+.section {
+  position: relative;
+  z-index: 2;
+  padding: 96px 0;
+}
+.head {
+  margin-bottom: 48px;
+}
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--cyan);
+  margin-bottom: 12px;
+}
+.title {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 64px 0;
+  }
+}

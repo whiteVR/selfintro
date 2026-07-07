@@ -1,0 +1,44 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 26px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.card:hover {
+  border-color: rgba(34, 211, 238, 0.4);
+  transform: translateY(-4px);
+}
+.category {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  padding-left: 12px;
+  border-left: 3px solid;
+  border-image: var(--accent-grad) 1;
+}
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chips li {
+  font-size: 13px;
+  color: var(--ink-soft);
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--panel-border);
+  transition: all 0.2s;
+}
+.chips li:hover {
+  color: var(--ink);
+  border-color: var(--cyan);
+  background: rgba(34, 211, 238, 0.08);
+}
