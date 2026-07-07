@@ -86,6 +86,32 @@ img {
   }
 }
 
+/* ── 3D 구 위에서 가독성 확보 ──
+   콘텐츠 섹션에 반투명 다크 scrim을 깔아 회전하는 구가 은은히 비치되
+   폰트와 색이 간섭하지 않도록 함. 히어로(<header>)는 제외되어 구가 그대로 보임. */
+main > section {
+  background: rgba(9, 12, 20, 0.62);
+}
+
+/* ── 분야별(섹션별) 제목 색상 차별화 ──
+   섹션을 이동할 때마다 제목 색이 바뀌며, text-shadow로 배경 구와 대비 확보 */
+main > section header p,
+main > section header h2 {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+#about header p,
+#about header h2 { color: #38d6ef; }        /* 소개 — 시안 */
+#skills header p,
+#skills header h2 { color: #f0b429; }        /* 핵심기술 — 골드 */
+#career header p,
+#career header h2 { color: #a78bfa; }        /* 현장경력 — 퍼플 */
+#projects header p,
+#projects header h2 { color: #34d399; }      /* 프로젝트 — 에메랄드 */
+#lectures header p,
+#lectures header h2 { color: #fb7185; }      /* 강의 — 로즈 */
+#education header p,
+#education header h2 { color: #60a5fa; }      /* 학력·자격 — 스카이 */
+
 /* 스크롤바 */
 ::-webkit-scrollbar {
   width: 10px;

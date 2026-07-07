@@ -41,12 +41,14 @@
   font-weight: 900;
   line-height: 1.2;
   letter-spacing: -1.5px;
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.6);
 }
 .roles {
   margin-top: 20px;
   font-size: clamp(15px, 2.2vw, 19px);
   font-weight: 600;
   color: var(--ink-soft);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
 }
 .roles em {
   color: var(--purple);
@@ -57,8 +59,9 @@
   margin-top: 24px;
   max-width: 640px;
   font-size: 15px;
-  color: var(--ink-soft);
+  color: #c4cde1;
   line-height: 1.9;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
 }
 
 .actions {

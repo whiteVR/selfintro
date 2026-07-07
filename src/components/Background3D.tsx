@@ -33,11 +33,12 @@ function ParticleGlobe() {
 
   return (
     <points ref={points} geometry={geometry}>
+      {/* 텍스트와의 간섭을 줄이도록 채도·밝기·불투명도를 낮춘 은은한 톤 (회전 인터랙션은 유지) */}
       <pointsMaterial
-        size={0.028}
-        color={"#4de3f5"}
+        size={0.024}
+        color={"#4bb8d6"}
         transparent
-        opacity={0.9}
+        opacity={0.5}
         sizeAttenuation
       />
     </points>
